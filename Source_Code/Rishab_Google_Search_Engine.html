@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<!--
+    Author      : Rishab.H
+    Description : 
+                    * This code takes the input from the user and searches the result in original google search engine.
+                    * I have given a mic symbol just to maintain the style of original google but it has no purpose (i.e no code is done for voice typing).
+                    * The user can launch the search by pressing the enterkey in keyboard or clicking the Rishab_Google Search button provided.
+-->
+
+<html>
+    
+    <head>
+
+        <title>Rishab Google Search Engine</title> 
+        <meta charset = "UTF-8">
+
+        <!-- CSS Code -->
+        <style>
+            *
+            {
+                margin : 0 ;
+                padding : 0 ;
+                box-sizing : border-box ;
+                font-family : 'arial','Consolas','Times New Roman' ;
+            }
+            section
+            {
+                position : relative ;
+                width : 100% ;
+                height : 100vh ;
+                display : flex ;
+                justify-content : center ;
+                align-items : center ;
+            }
+            section .main
+            {
+                width : 500px ;
+                margin : 0 20px ;
+                display : flex ;
+                justify-content : center ;
+                align-items : center ;
+                flex-direction : column ;
+            }
+            section .main .search_box
+            {
+                position : relative ;
+                width : 100% ;
+                margin-top : 20px ;
+            }
+            section .main .search_box .search_element
+            {
+                width : 100% ;
+                padding : 13px ;
+                border : 1px solid #ccc ;
+                outline : none ;
+                font-size : 15px ;
+                border-radius : 30px ;
+                padding-left : 50px ;
+                padding-right : 50px ;
+            }
+            section .main .search_box .icons
+            {
+                position : absolute ;
+                top : 0 ;
+                width : 100% ;
+                display : flex ;
+                justify-content : space-between ;
+                padding : 12px 20px ;
+                align-items : center ;
+                pointer-events : none ;
+            }
+            section .main .search_box .icons img
+            {
+                max-width : 100% ;
+            }
+            .search_button
+            {
+                margin : 0 5px ;
+                margin-top : 20px ;
+                padding : 12px 20px ;
+                color : #555 ;
+                font-size : 15px ;
+                border : none ;
+                cursor : pointer ;
+                border-radius : 30px ;
+                border : 1px solid transparent ;
+                outline : none ;
+            }
+            .search_button:hover
+            {
+                border : 1px solid #ccc ;
+            }
+            #Rishab_Google_logo
+            {
+                height : 130px ;
+                width : 425px ;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+        <section>
+
+            <div class = "main">
+                <img src = "../Images/Rishab_Google_logo.jpg" id = "Rishab_Google_logo">
+
+                <div class = "search_box">
+                    <input type = "text" name = "" class = "search_element" value = "" placeholder = "Rishab_Google Search" autofocus>
+                    <div class = "icons">
+                        <div><img src = "../Images/search.png"></div>
+                        <div><img src = "../Images/mic.png"></div>
+                    </div>
+                </div>
+
+                <div class = "button">
+                    <button class = "search_button">Rishab_Google Search</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- JavaScript Code -->
+        <script>
+            
+            var search_element = document.querySelector('.search_element') ;
+            var search_button = document.querySelector('.search_button') ;
+            
+            /*
+             * Searching with Rishab_Google Search button.
+             * This is given just for a backup if enter key is not working especially in mobiles.
+             */
+            search_button.onclick = function() {
+                let url = 'https://www.google.com/search?q='+search_element.value ;
+                /*
+                 * window.open() is used to open the search url.
+                 * '_self' parameter is used to open the result in the same page.
+                 */
+                window.open(url,'_self') ;
+            } ;
+
+            /*
+             * Searching by pressing Enter key in the keyboard.
+             */
+            document.addEventListener("keydown",(e) => { 
+                /*
+                 * For PC or Laptop purpose to start search if the enter key is pressed.
+                 */
+                if(e.key === "Enter")
+                {
+                    let url = 'https://www.google.com/search?q='+search_element.value ;
+                    window.open(url,'_self') ;
+                }
+            }) ;
+        </script>
+
+    </body>
+</html>

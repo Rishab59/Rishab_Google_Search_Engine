@@ -14,9 +14,11 @@
 
         <title>Rishab Google Search Engine</title> 
         <meta charset = "UTF-8">
+        <link rel = "shortcut icon" type = "image/png" href = "../Images/letter-r.png">
 
         <!-- CSS Code -->
         <style>
+            
             *
             {
                 margin : 0 ;
@@ -24,6 +26,7 @@
                 box-sizing : border-box ;
                 font-family : 'arial','Consolas','Times New Roman' ;
             }
+            
             section
             {
                 position : relative ;
@@ -33,6 +36,7 @@
                 justify-content : center ;
                 align-items : center ;
             }
+            
             section .main
             {
                 width : 500px ;
@@ -42,12 +46,14 @@
                 align-items : center ;
                 flex-direction : column ;
             }
+            
             section .main .search_box
             {
                 position : relative ;
                 width : 100% ;
                 margin-top : 20px ;
             }
+            
             section .main .search_box .search_element
             {
                 width : 100% ;
@@ -59,6 +65,7 @@
                 padding-left : 50px ;
                 padding-right : 50px ;
             }
+            
             section .main .search_box .icons
             {
                 position : absolute ;
@@ -70,10 +77,12 @@
                 align-items : center ;
                 pointer-events : none ;
             }
+            
             section .main .search_box .icons img
             {
                 max-width : 100% ;
             }
+            
             .search_button
             {
                 margin : 0 5px ;
@@ -87,10 +96,12 @@
                 border : 1px solid transparent ;
                 outline : none ;
             }
+            
             .search_button:hover
             {
                 border : 1px solid #ccc ;
             }
+            
             #Rishab_Google_logo
             {
                 height : 130px ;
@@ -125,6 +136,16 @@
 
         <!-- JavaScript Code -->
         <script>
+            
+            let docTitle = document.title ;
+            
+            window.addEventListener("blur", () => {
+                document.title = "Thanks For Visiting - Rishab" ;
+            }) ;
+
+            window.addEventListener("focus", () => {
+                document.title = docTitle ;
+            }) ;
             
             var search_element = document.querySelector('.search_element') ;
             var search_button = document.querySelector('.search_button') ;
